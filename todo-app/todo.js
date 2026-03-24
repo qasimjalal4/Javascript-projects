@@ -26,7 +26,7 @@ function renderTodo() {
     
      <div>${name}</div>
      <div>${date}</div>
-     <button>Delete</button>
+     <button class="delete-button js-delete-button">Delete</button>
     `;
 
     todoListHTMl += html;
