@@ -8,11 +8,34 @@ const todoList = [{
   date: '23-08-24'
 }];
 
+renderTodo();
 
 addButton.addEventListener('click', () => {
   addTodo();
 })
 
+function renderTodo() {
+
+  let todoListHTMl = '';
+
+  todoList.forEach((todo) => {
+
+    const {name,date} = todo;
+
+    const html = `
+    
+     <div>${name}</div>
+     <div>${date}</div>
+     <button>Delete</button>
+    `;
+
+    todoListHTMl += html;
+
+  })
+
+
+  document.querySelector('.js-todo-list-grid').innerHTML = todoListHTMl;
+}
 
 
 function addTodo() {
@@ -29,7 +52,8 @@ function addTodo() {
     date
   })
 
-  console.log(todoList);
+  renderTodo();
 
+  inputEl.value = '';
 
 }
