@@ -1,6 +1,6 @@
 const addButton = document.querySelector('.js-add-button');
 
-let todoList = [{
+let todoList = JSON.parse(localStorage.getItem('todoList')) ||  [{
   name: 'dinner',
   date: '20-02-23'
 }, {
@@ -43,6 +43,7 @@ function renderTodo() {
     deleteBtn.addEventListener('click', () => {
       todoList.splice(index,1);
       renderTodo();
+      saveToStorage();
     })
   })   
 }
@@ -58,6 +59,11 @@ function addTodo() {
   let name = inputEl.value;
   let date = dueDateEl.value;
 
+  if(name === '' || date === '') {
+    alert('Inputs cant be empty bacha!');
+    return;
+  }
+
   todoList.push({
     name,
     date
@@ -65,6 +71,14 @@ function addTodo() {
 
   renderTodo();
 
+   
+
   inputEl.value = '';
 
+  saveToStorage();
+}
+
+
+function saveToStorage() {
+  localStorage.setItem('todoList',JSON.stringify(todoList));
 }
