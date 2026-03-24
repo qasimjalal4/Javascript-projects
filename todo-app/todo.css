@@ -17,8 +17,10 @@ body {
   margin-left: 10px;
   gap: 5px;
 }
+
 .todo-grid {
   font-weight: 550;
+   row-gap: 10px;
 }
 
 .name-input,
@@ -29,6 +31,7 @@ body {
   border: 1px solid gray;
   padding-left: 7px;
 }
+
 
 .add-button {
   background-color: green;
@@ -54,9 +57,10 @@ body {
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
-
+  padding-top: 7px;
+  padding-bottom: 7px;
   transition: opacity 0.25s;
-
+ 
 }
 
 .delete-button:active {
