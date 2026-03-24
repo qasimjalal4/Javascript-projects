@@ -1,6 +1,6 @@
 const addButton = document.querySelector('.js-add-button');
 
-const todoList = [{
+let todoList = [{
   name: 'dinner',
   date: '20-02-23'
 }, {
@@ -16,9 +16,9 @@ addButton.addEventListener('click', () => {
 
 function renderTodo() {
 
-  let todoListHTMl = '';
+  let todoListHTML = '';
 
-  todoList.forEach((todo) => {
+  todoList.forEach((todo,index) => {
 
     const {name,date} = todo;
 
@@ -29,13 +29,24 @@ function renderTodo() {
      <button class="delete-button js-delete-button">Delete</button>
     `;
 
-    todoListHTMl += html;
+    todoListHTML += html;
 
   })
 
+  
+  
+  document.querySelector('.js-todo-list-grid').innerHTML = todoListHTML;
 
-  document.querySelector('.js-todo-list-grid').innerHTML = todoListHTMl;
+   
+ document.querySelectorAll('.js-delete-button').
+  forEach((deleteBtn,index) => {
+    deleteBtn.addEventListener('click', () => {
+      todoList.splice(index,1);
+      renderTodo();
+    })
+  })   
 }
+ 
 
 
 function addTodo() {
