@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+ 
+  background-color: slateblue;
+  font-family: cursive;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calender-container {
+  background-color: white;
+  width: 309px;
+  height: 300px;
+  box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.45);
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden; 
+  text-align: center;
+  
+}
+
+.month-name {
+  background-color: rgb(240, 71, 10);
+  color: white;
+  font-size: 30px; 
+  font-weight: bold;
+  padding: 10px;
+}
+
+.day-name {
+  font-size: 23px;
+  color: rgb(120,120,120);
+}
+
+.date-name {
+  font-weight: bolder;
+  font-size: 80px;
+}
+
+.year-name {
+  margin-bottom: 17px;
+  color: rgb(120,120,120);
+  font-size: 18px;
+}
