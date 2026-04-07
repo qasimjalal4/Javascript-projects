@@ -50,6 +50,11 @@ html {
   font-size: 16px;
 }
 
+.tab.clicked {
+  background-color: rgb(31, 86, 206);
+  color: white;
+}
+
 .content  {
   color: black;
   border-bottom-width: 1px;
