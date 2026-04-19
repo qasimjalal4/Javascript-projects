@@ -13,3 +13,14 @@ const NUMBERS = '0123456789';
 const SYMBOLS = '!@#$%^&*()_+{}[]<>?'; 
 
  
+generateBtn.addEventListener('click', () => {
+
+  let container = '';
+
+  if(upperBox.checked) container += UPPER;
+  if(lowerBox.checked) container += LOWER;
+  if(numbersBox.checked) container += NUMBERS;
+  if(symbolsBox.checked) container += SYMBOLS;
+
+  
+})
