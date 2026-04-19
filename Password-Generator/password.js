@@ -44,6 +44,32 @@ generateBtn.addEventListener('click', () => {
   }
 
 
+  let length = Number(passwordLength.value);
+
+  while(password.length < length) {
+
+    if(container === '') {
+      alert("Please atleast one box!");
+      return;
+    }
+
+    if(length <= 0) {
+      alert("Length must be greater than zero.");
+      return;
+    }
+
+    if(length < password.length) {
+      alert("Length is too small compared to selected boxes");
+      return;
+    }
+
+    let index = Math.random() * container.length;
+    password.push(container[index]);
+
+
+   
+
+  }
 
  
 
