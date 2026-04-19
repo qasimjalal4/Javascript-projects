@@ -1,4 +1,3 @@
-const { createMemorySessionStorage } = require("react-router");
 
 const generateBtn = document.querySelector('.js-generate-button');
 const passwordInput = document.querySelector('.js-password-input');
@@ -14,6 +13,17 @@ const LOWER = 'abcdefghijklmnopqrstuvwxyz';
 const NUMBERS = '0123456789';
 const SYMBOLS = '!@#$%^&*()_+{}[]<>?'; 
 
+function shuffle(array) {
+  for(let i = array.length - 1; i < 0; i--) {
+    let j = Math.floor(Math.random() * (i+1));
+ 
+    [array[i],array[j]] = [array[j],array[i]];
+
+  }
+
+  return array;
+}
+
  
 generateBtn.addEventListener('click', () => {
 
@@ -25,52 +35,65 @@ generateBtn.addEventListener('click', () => {
   if(numbersBox.checked) container += NUMBERS;
   if(symbolsBox.checked) container += SYMBOLS;
 
-
   
-  if(upperBox.checked) {
-    password.push(UPPER[Math.random() * UPPER.length]);
-  }
-
-  if(lowerBox.checked) {
-    password.push(LOWER[Math.random() * LOWER.length]);
-  }
-
-  if(numbersBox.checked) {
-    password.push(NUMBERS[Math.random() * NUMBERS.length]);
-  }
-
-  if(symbolsBox.checked) {
-    password.push(SYMBOLS[Math.random() * SYMBOLS.length]);
-  }
-
-
-  let length = Number(passwordLength.value);
-
-  while(password.length < length) {
-
     if(container === '') {
-      alert("Please atleast one box!");
+      alert("Please select atleast one box!");
       return;
     }
+
+    let length = Number(passwordLength.value);
 
     if(length <= 0) {
       alert("Length must be greater than zero.");
       return;
     }
+ 
 
+    if(length > 10) {
+      alert("Length must be less than 10");
+      return;
+    }
+ 
+  
+
+  if(upperBox.checked) {
+    password.push(UPPER[Math.floor(Math.random() * UPPER.length)]);
+  }
+
+  if(lowerBox.checked) {
+    password.push(LOWER[Math.floor(Math.random() * LOWER.length)]);
+  }
+
+  if(numbersBox.checked) {
+    password.push(NUMBERS[Math.floor(Math.random() * NUMBERS.length)]);
+  }
+
+  if(symbolsBox.checked) {
+    password.push(SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)]);
+  }
+
+
+  
     if(length < password.length) {
       alert("Length is too small compared to selected boxes");
       return;
     }
+ 
+  
 
-    let index = Math.random() * container.length;
+  while(password.length < length) {
+ 
+    let index = Math.floor(Math.random() * container.length);
     password.push(container[index]);
-
-
-
+    
   }
 
-   passwordInput.value = password; 
+   shuffle(password);
+
+
+
+
+   passwordInput.value = password.join(''); 
 
 })
 
