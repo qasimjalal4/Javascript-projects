@@ -67,10 +67,26 @@ generateBtn.addEventListener('click', () => {
     password.push(container[index]);
 
 
-   
 
   }
 
- 
+   passwordInput.value = password; 
 
 })
+
+
+
+copyBtn.addEventListener('click', () => {
+  if (passwordInput.value === '') return;
+
+  navigator.clipboard.writeText(passwordInput.value)
+    .then(() => {
+      copyBtn.innerText = 'Copied';
+      setTimeout(() => {
+        copyBtn.innerText = 'Copy';
+      }, 2000);
+    })
+    .catch(() => {
+      alert('Failed to copy');
+    });
+});
