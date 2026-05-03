@@ -116,6 +116,10 @@ function addExpense() {
   let price = Number(amountBox.value);
   let date = dateInputEl.value;
 
+  if(!item || !category || !price || !date) {
+    alert('Please fill all the fields!');
+    return;
+  }
 
   expenses.push({
     item,
