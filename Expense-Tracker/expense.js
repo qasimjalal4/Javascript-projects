@@ -29,8 +29,17 @@ function renderExpense() {
 
   let expenseHTML = '';
 
+  let total = 0;
+  let most_exp_item = expenses[0];      
   
   expenses.forEach((expense,index) => {
+   
+     total += expense.price;
+     
+     if(expense.price > most_exp_item.price) {
+      most_exp_item = expense;
+     }
+
     const {item,category,price,date} = expense;
 
     let html = `
@@ -91,9 +100,15 @@ function renderExpense() {
       renderExpense();
     })
 
-   })  
+   })
+   
+   
+   totalAmount.innerHTML = total;
+   totalQuantity.innerHTML = expenses.length;
+   highestExpense.innerHTML = `${most_exp_item.item}(Rs.${most_exp_item.price})`
 }
 
+ 
 
 function addExpense() {
   let item = itemBox.value;
