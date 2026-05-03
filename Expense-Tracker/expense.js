@@ -30,7 +30,7 @@ function renderExpense() {
   let expenseHTML = '';
 
   
-  expenses.forEach((expense) => {
+  expenses.forEach((expense,index) => {
     const {item,category,price,date} = expense;
 
     let html = `
@@ -60,6 +60,14 @@ function renderExpense() {
 
   document.querySelector('.expense-grid').innerHTML = expenseHTML;
 
+
+  document.querySelectorAll('.delete-button').
+   forEach((deleteBtn,index) => {
+    deleteBtn.addEventListener('click', () => {
+     expenses.splice(index,1)
+     renderExpense();
+    })
+   })
 }
 
 
@@ -79,7 +87,7 @@ function addExpense() {
 
 
   itemBox.value = '';
-  expenseCategorySelector.value = '';
+  expenseCategorySelector.selectedIndex = 0;
   amountBox.value = '';
   dateInputEl.value = '';
 
