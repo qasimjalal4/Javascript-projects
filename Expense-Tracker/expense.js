@@ -18,8 +18,44 @@ let expenses = [
 ]
 
 
+addBtn.addEventListener('click', () => {
+     addExpense();
+})
+
+renderExpense();
+
+
 function renderExpense() {
+
+  let expenseHTML = '';
+
   
+  expenses.forEach((expense) => {
+    const {item,category,price,date} = expense;
+
+    let html = `
+      <div class="expense-details">
+       <div class="expense-container1">
+        <span>${item}</span>
+        <span class="item-category">${category}</span>
+       </div>
+       <div class="expense-container2">
+        <span class="price">Rs.${price}</span>
+        <span class="date">${date}</span>
+       </div>
+       <div class="buttons-container">
+        <button>Edit</button>
+        <button>Delete</button>
+       </div>
+       </div>
+    `;
+
+    expenseHTML += html;
+
+  })
+
+  document.querySelector('.expense-grid').innerHTML = expenseHTML;
+
 }
 
 
@@ -30,7 +66,7 @@ function addExpense() {
   let date = dateInputEl.value;
 
 
-  expenseList.push({
+  expenses.push({
     item,
     category,
     price,
@@ -42,8 +78,9 @@ function addExpense() {
   expenseCategorySelector.value = '';
   amountBox.value = '';
   dateInputEl.value = '';
+
+
+  renderExpense();
 }
 
-addBtn.addEventListener('click', () => {
-     addExpense();
-})
+ 
