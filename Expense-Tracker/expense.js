@@ -68,6 +68,30 @@ function renderExpense() {
      renderExpense();
     })
    })
+
+  document.querySelectorAll('.edit-button').
+   forEach((editBtn,index) => {
+    editBtn.addEventListener('click', () => {
+      if(itemBox.value !== '') {
+        expenses[index].item = itemBox.value;
+      } 
+      
+      if(expenseCategorySelector.value !== '') {
+        expenses[index].category = expenseCategorySelector.value;
+      }
+
+      if(amountBox.value !== '') {
+        expenses[index].price = amountBox.value;
+      }
+
+      if(dateInputEl.value !== '') {
+        expenses[index].date = dateInputEl.value;
+      }
+
+      renderExpense();
+    })
+
+   })  
 }
 
 
