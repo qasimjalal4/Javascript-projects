@@ -81,7 +81,7 @@ section {
 
 .expense-details {
   width: 660px;
-  height: 63px;
+  height: 68px;
   border: none;
   border-radius: 6px;
   color: black;
@@ -98,7 +98,7 @@ section {
   display: flex;
   flex-direction: column;
   padding-left: 18px;
-  row-gap: 7px;
+  row-gap: 8px;
 }
 
 .item-category {
@@ -108,7 +108,7 @@ section {
 .expense-container2 {
   display: flex;
   flex-direction: column;
-  row-gap: 7px;
+  row-gap: 8px;
   align-items: center;
 }
 
@@ -124,7 +124,29 @@ section {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  column-gap: 10px;
+  column-gap: 14px;
 }
 
- 
+img {
+  height: 24px;
+  width: 24px;
+  object-fit: cover;
+  
+} 
+
+.delete-button,
+.edit-button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+
+  transform: opacity 0.25s;
+}
+
+.delete-button:active {
+  opacity: 0.75;
+}
+
+.edit-button:active {
+  opacity: 0.75;
+}

@@ -44,8 +44,12 @@ function renderExpense() {
         <span class="date">${date}</span>
        </div>
        <div class="buttons-container">
-        <button class="edit-button">Edit</button>
-        <button class="delete-button">Delete</button>
+        <button class="edit-button">
+         <img src="./icons/edit.png" >
+        </button>
+        <button class="delete-button">
+         <img src="./icons/delete.png" >
+        </button>
        </div>
        </div>
     `;
