@@ -17,6 +17,16 @@ let expenses = [
   }
 ]
 
+let categoryColor = {
+  Food: 'red',
+  Entertainment: 'purple',
+  Bills: 'blue',
+  Shopping: 'darkorchid',
+  Other: 'grey'
+}
+
+
+
 
 addBtn.addEventListener('click', () => {
      addExpense();
@@ -32,6 +42,8 @@ function renderExpense() {
   let total = 0;
   let most_exp_item = expenses[0];      
   
+
+
   expenses.forEach((expense,index) => {
    
      total += expense.price;
@@ -42,11 +54,15 @@ function renderExpense() {
 
     const {item,category,price,date} = expense;
 
+    let color = categoryColor[category];
+
     let html = `
       <div class="expense-details">
        <div class="expense-container1">
         <span>${item}</span>
-        <span class="item-category">${category}</span>
+        <span class="item-category" style="
+         background-color: ${color}
+        ">${category}</span>
        </div>
        <div class="expense-container2">
         <span class="price">Rs.${price}</span>
