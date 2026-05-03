@@ -25,6 +25,7 @@ section {
   grid-template-columns: 250px 200px 200px;
   column-gap: 6px;
   row-gap: 10px;
+  margin-bottom: 25px;
 }
 
  
@@ -56,3 +57,24 @@ section {
   opacity: 0.7;
 }
 
+.expense-category {
+  font-weight: 700;
+  
+}
+
+.expense-calculation-bar {
+  width: 660px;
+  height: 55px;
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  display: grid;
+  grid-template-columns: 125px 145px 260px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+
+}
