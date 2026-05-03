@@ -24,15 +24,14 @@ section {
   display: grid;
   grid-template-columns: 250px 200px 200px;
   column-gap: 6px;
+  row-gap: 10px;
 }
 
-.item-box {
-  padding: 7px 7px;
-  border-radius: 4px;
-  border: 1px solid grey;
-}
+ 
 
-.amount-box {
+.amount-box, 
+.item-box,
+.input-date {
   padding: 7px 7px;
   border-radius: 4px;
   border: 1px solid grey;
