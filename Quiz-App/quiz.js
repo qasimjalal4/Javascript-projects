@@ -1,18 +1,19 @@
-
-const container = document.querySelector('.js-container');
-
+const container = document.querySelector(".js-container");
 
 let currentQuestionIndex = 0;
 
 loadQuestion(currentQuestionIndex);
 
- 
-
-
 function loadQuestion(index) {
-
   let html = `
-   <div class="question-number js-question-number">${currentQuestionIndex + 1}/5</div>
+     <div class="question-header">
+      <div class="question-number js-question-number">
+        ${currentQuestionIndex + 1}/5
+      </div>
+      <div class="score">
+        Score: 0
+      </div>
+     </div>
     <div class="question js-question">
       ${quizQuestions[index].question}
     </div>
@@ -21,34 +22,27 @@ function loadQuestion(index) {
     </div>
 
     <button class="next-button js-next-button">Next</button>
-  `
+  `;
 
   container.innerHTML = html;
 
+  document.querySelector(".js-next-button").addEventListener("click", () => {
+    currentQuestionIndex++;
 
-  document.querySelector('.js-next-button').addEventListener('click', () => {
-
-  currentQuestionIndex++;
-
-  loadQuestion(currentQuestionIndex)
-
-})
+    loadQuestion(currentQuestionIndex);
+  });
 }
 
-
 function generateOptions(options) {
+  let optionsHtml = "";
 
-  let optionsHtml = '';
-   
-options.forEach((optionEl) => {
-
-     optionsHtml += `
+  options.forEach((optionEl) => {
+    optionsHtml += `
      <div class="option js-option">${optionEl}</div>
    
    
   `;
-   })
+  });
 
-
- return optionsHtml;  
+  return optionsHtml;
 }
