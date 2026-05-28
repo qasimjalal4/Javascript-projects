@@ -159,3 +159,8 @@ html {
 .restart-button:active {
   opacity: 0.8;
 }
+
+.option:disabled {
+ border: 1px solid #d1d5db;
+ background-color: white; 
+}
