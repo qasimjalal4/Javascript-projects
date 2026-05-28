@@ -1,12 +1,21 @@
 const container = document.querySelector(".js-container");
 const scoreContainer = document.querySelector('.score-container');
-
+const restartButton = document.querySelector('.restart-button');
 
 let currentQuestionIndex = 0;
 
  
 loadQuestion(currentQuestionIndex);
  
+
+restartButton.addEventListener('click', () => {
+
+  scoreContainer.style.display = 'none';
+  container.style.display = 'flex';
+  currentQuestionIndex = 0;
+  loadQuestion(currentQuestionIndex);
+  
+})
 
 function loadQuestion(index) {
   let html = `
