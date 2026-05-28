@@ -104,3 +104,58 @@ html {
 .next-button:active {
   opacity: 0.8;
 }
+
+
+.score-container {
+  width: 100%;
+  height: 100%;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+.score-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+
+  margin-bottom: 16px;
+}
+
+.final-score {
+  font-size: 24px;
+  color: #2563eb;
+  font-weight: 600;
+
+  margin-bottom: 30px;
+}
+
+.restart-button {
+  width: 220px;
+  height: 50px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: #2563eb;
+  color: white;
+
+  font-size: 17px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: opacity 0.2s;
+}
+
+.restart-button:hover {
+  opacity: 0.9;
+}
+
+.restart-button:active {
+  opacity: 0.8;
+}
