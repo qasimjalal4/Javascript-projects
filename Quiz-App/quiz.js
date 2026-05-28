@@ -1,8 +1,12 @@
 const container = document.querySelector(".js-container");
+const scoreContainer = document.querySelector('.score-container');
+
 
 let currentQuestionIndex = 0;
 
+ 
 loadQuestion(currentQuestionIndex);
+ 
 
 function loadQuestion(index) {
   let html = `
@@ -29,7 +33,15 @@ function loadQuestion(index) {
   document.querySelector(".js-next-button").addEventListener("click", () => {
     currentQuestionIndex++;
 
+    if(currentQuestionIndex > quizQuestions.length - 1) {
+  
+    scoreContainer.style.display = 'flex';
+    container.style.display = 'none';
+     
+} else {
+
     loadQuestion(currentQuestionIndex);
+}
   });
 }
 
