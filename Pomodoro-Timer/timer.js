@@ -4,6 +4,7 @@ const displayTime = document.querySelector('.time-display');
 
 let totalSeconds = 1500;
 let isRunning = false;
+let intervalId;
 
 startStopBtn.addEventListener('click', () => {
 
@@ -14,7 +15,7 @@ startStopBtn.addEventListener('click', () => {
 function startStopTimer() {
 
   if(!isRunning) {
-    setInterval(() => {
+   intervalId = setInterval(() => {
       if(totalSeconds > 0) {
         totalSeconds--;
         displayTime.innerText = totalSeconds;
@@ -22,5 +23,9 @@ function startStopTimer() {
     }, 1000)
 
     isRunning = true;
+  } else {
+ 
+    clearInterval(intervalId)
+    isRunning = false;
   }
 }
