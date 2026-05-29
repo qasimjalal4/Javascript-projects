@@ -51,5 +51,6 @@ function resetTimer() {
   isRunning = false;
   clearInterval(intervalId);
   displayTime.innerText = formatTime(totalSeconds);
+  startStopBtn.innerText = 'Start';
 
  }
