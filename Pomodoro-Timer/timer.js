@@ -35,12 +35,13 @@ function startStopTimer() {
         displayTime.innerText = formatTime(totalSeconds);
       }
     }, 1000)
-
+    startStopBtn.innerText = 'Stop'; 
     isRunning = true;
   } else {
  
     clearInterval(intervalId)
     isRunning = false;
+    startStopBtn.innerText = 'Start';
   }
 }
 
