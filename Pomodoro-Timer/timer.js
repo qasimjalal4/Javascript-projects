@@ -11,6 +11,9 @@ startStopBtn.addEventListener('click', () => {
   startStopTimer()
 })
 
+resetBtn.addEventListener('click', () => {
+  resetTimer();
+})
 
 function startStopTimer() {
 
@@ -29,3 +32,12 @@ function startStopTimer() {
     isRunning = false;
   }
 }
+
+
+function resetTimer() {
+   totalSeconds = 1500;
+  isRunning = false;
+  clearInterval(intervalId);
+  displayTime.innerText = totalSeconds;
+
+ }
