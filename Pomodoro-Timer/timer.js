@@ -15,13 +15,24 @@ resetBtn.addEventListener('click', () => {
   resetTimer();
 })
 
+function formatTime(totalSeconds) {
+
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+
+  const mintStr = minutes < 10 ? '0' + minutes : minutes;
+  const secStr = seconds < 10 ? '0' + seconds : seconds;
+
+  return `${mintStr} : ${secStr}`;
+}
+
 function startStopTimer() {
 
   if(!isRunning) {
    intervalId = setInterval(() => {
       if(totalSeconds > 0) {
         totalSeconds--;
-        displayTime.innerText = totalSeconds;
+        displayTime.innerText = formatTime(totalSeconds);
       }
     }, 1000)
 
@@ -35,9 +46,9 @@ function startStopTimer() {
 
 
 function resetTimer() {
-   totalSeconds = 1500;
+  totalSeconds = 1500;
   isRunning = false;
   clearInterval(intervalId);
-  displayTime.innerText = totalSeconds;
+  displayTime.innerText = formatTime(totalSeconds);
 
  }
