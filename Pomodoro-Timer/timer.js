@@ -35,13 +35,15 @@ function startStopTimer() {
         displayTime.innerText = formatTime(totalSeconds);
       }
     }, 1000)
-    startStopBtn.innerText = 'Stop'; 
+    startStopBtn.innerText = 'Stop';
+    startStopBtn.classList.add('color-changer'); 
     isRunning = true;
   } else {
  
     clearInterval(intervalId)
     isRunning = false;
     startStopBtn.innerText = 'Start';
+    startStopBtn.classList.remove('color-changer');
   }
 }
 
@@ -52,5 +54,5 @@ function resetTimer() {
   clearInterval(intervalId);
   displayTime.innerText = formatTime(totalSeconds);
   startStopBtn.innerText = 'Start';
-
+   startStopBtn.classList.remove('color-changer')
  }

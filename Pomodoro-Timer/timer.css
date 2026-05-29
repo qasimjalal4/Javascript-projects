@@ -65,3 +65,7 @@ h2 {
 .reset-button:active {
   opacity: 0.8;
 }
+
+.color-changer {
+  background-color: rgb(172, 5, 5);
+}
