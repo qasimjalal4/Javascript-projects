@@ -23,4 +23,71 @@ body {
   width: 450px;
   border-radius: 10px;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+   color: #006400;
+   font-size: 30px;
+   font-weight: 700;
+   padding-top: 28px;
+   
+}
+
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  height: 90px;
+  width: 125px;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.box:hover,
+.box.active {
+  background-color: #487248;
+}
+
+img {
+  height: 47px;
+  width: 47px;
+  object-fit: cover;
+}
+
+
+.review-button {
+  background-color: darkcyan;
+  color: aliceblue;
+  border: none;
+  padding: 11px 24px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.review-button:hover {
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.review-button:active {
+  transform: scale(0.96);
 }
