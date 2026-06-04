@@ -18,11 +18,21 @@ ageCalculateBtn.addEventListener('click', () => {
 
   const birthDay = new Date(inputDate);
 
+
+  if (birthDay > presentDay) {
+   result.innerHTML = 'Birth date cannot be in the future.';
+  return;
+}
+
   const birthDate = birthDay.getDate();
   const birthMonth = birthDay.getMonth() + 1;
   const birthYear = birthDay.getFullYear();
 
   let year = presentYear - birthYear;
+
+ 
+
+
   let month;
   let days;
 
@@ -54,8 +64,15 @@ ageCalculateBtn.addEventListener('click', () => {
     days = presentDate - birthDate;
   }
 
+
+
+  if(year <= 0) {
+    result.innerHTML = `You are ${month} months and ${days} days old`
+    
+  } else {
   result.innerHTML =
     `You are ${year} years, ${month} months and ${days} days old`;
+  }  
 });
 
 function getDaysInMonth(month, year) {
